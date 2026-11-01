@@ -160,7 +160,9 @@ def activate_kindle(preferred: Optional[str] = None) -> tuple[bool, str]:
           'Kindleウィンドウが見つかりません。\n'
           'Amazon Kindle for PC を起動して読みたい本を開いてください。'
         )
+      candidates.sort(key=lambda w: w.title.strip() != "Kindle")
       w = candidates[0]
+
       try:
         if w.isMinimized:
           w.restore()
