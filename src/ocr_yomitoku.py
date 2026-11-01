@@ -13,8 +13,9 @@ def is_available() -> bool:
   try:
     import yomitoku  # noqa: F401
     return True
-  except ImportError:
+  except (ImportError, RuntimeError):
     return False
+
 
 
 def ocr_image_with_yomitoku(image_path: Path, languages: list[str] = None) -> list[tuple[str, tuple]]:
