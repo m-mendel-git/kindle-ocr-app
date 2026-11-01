@@ -982,6 +982,7 @@ class AllInOneTab(QWidget):
       delay_sec=self.delay.value(),
       countdown_sec=0,  # オーバーレイで代替するのでcapture内のカウントダウンは0
       region=self._capture_region,
+      page_key='left',
     )
     language = self.language.currentData()
 
